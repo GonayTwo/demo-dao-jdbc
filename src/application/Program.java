@@ -46,7 +46,7 @@ public class Program {
 		sellerDao.update(seller);
 		System.out.println("Update Completed");
 		
-		System.out.println("\n--- Test 6: Seller Update ---");
+		System.out.println("\n--- Test 6: Seller Delete ---");
 		System.out.println("Enter id for delete test:");
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);

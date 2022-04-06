@@ -53,11 +53,11 @@ public class SellerDaoJDBC implements SellerDao{
 				}
 				DB.closeResultSet(rs);
 			}else {
-				throw new DbException("Unexpeted error! Now Rows affected!");			}
+				throw new DbException("Unexpected error! No Rows affected!");			}
 		}catch(SQLException e) {
 			throw new DbException(e.getMessage());
 		}finally {
-			
+			DB.closeStatement(st);
 		}
 		
 	}
@@ -97,6 +97,8 @@ public class SellerDaoJDBC implements SellerDao{
 			st.executeUpdate();
 		}catch(SQLException e) {
 			throw new DbException(e.getMessage());
+		}finally {
+			DB.closeStatement(st);
 		}
 		
 	}
